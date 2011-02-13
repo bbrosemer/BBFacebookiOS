@@ -1,0 +1,2 @@
+/Users/brandynbrosemer/Documents/FacebookStaticTest/XMPPUserCoreDataStorage.m:337: warning: property 'unreadMessages' requires method '-unreadMessages' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/XMPPUserCoreDataStorage.m:337: warning: property 'unreadMessages' requires the method 'setUnreadMessages:' to be defined - use @synthesize, @dynamic or provide a method implementation

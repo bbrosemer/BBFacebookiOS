@@ -1,0 +1,72 @@
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) authenticateUserWithCallbackObject:andSelector:andExtendedPermissions:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:202: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:203: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:205: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) webViewDidFinishLoad:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:447: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:448: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) goOnline]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:690: warning: 'FacebookBBrosemer' may not respond to '-xmppStream'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:690: warning: (Messages without a matching method signature
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:690: warning: will be assumed to return 'id' and accept
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:690: warning: '...' as arguments.)
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) goOffline]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:698: warning: 'FacebookBBrosemer' may not respond to '-xmppStream'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) xmppStreamDidConnect:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:763: warning: 'FacebookBBrosemer' may not respond to '-xmppStream'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer(private) xmppStream:didReceiveMessage:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:792: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:805: warning: local declaration of 'window' hides instance variable
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:835: warning: format not a string literal and no format arguments
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:836: warning: 'RootViewController' may not respond to '-updateChat'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: At top level:
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:888: warning: incomplete implementation of category 'private'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:888: warning: method definition for '-loginInternal' not found
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer getPostFromPID:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1043: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer deletePostPID:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1046: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer getPostFromStoryTitle:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1051: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer getPostFromStoryLink:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1054: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer searchUserPostsWithString:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1060: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer searchApplicationPostsWithString:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1063: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer getUserPic]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1064: warning: conflicting types for '+(void)getUserPic'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.h:135: warning: previous declaration of '+(void *)getUserPic'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer presentModalUserPostControllerFromUPID:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1083: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer presentModalApplicationPostControllerFromAPID:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1086: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer presentModalAllPostControllerFromUPID:andAPID:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1090: warning: control reaches end of non-void function
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer presentFacebookTableModal:andCurrentViewController:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1126: warning: receiver 'iPadTableViewController' is a forward class and corresponding @interface may not exist
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1131: warning: receiver 'FacebookHashTableNavigationController' is a forward class and corresponding @interface may not exist
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1134: warning: incompatible Objective-C types 'struct FacebookHashTableNavigationController *', expected 'struct UIViewController *' when passing argument 1 of 'initWithRootViewController:' from distinct Objective-C type
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1138: warning: receiver 'FacebookHashTableNavigationController' is a forward class and corresponding @interface may not exist
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1140: warning: incompatible Objective-C types 'struct FacebookHashTableNavigationController *', expected 'struct UIViewController *' when passing argument 1 of 'initWithRootViewController:' from distinct Objective-C type
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1149: warning: incompatible Objective-C types 'struct iPadTableViewController *', expected 'struct UIViewController *' when passing argument 1 of 'presentModalViewController:animated:' from distinct Objective-C type
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '+[FacebookBBrosemer presentFacebookChatController:andCurrentViewController:]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1180: warning: incompatible Objective-C types 'struct iPadTableViewController *', expected 'struct UIViewController *' when passing argument 1 of 'presentModalViewController:animated:' from distinct Objective-C type
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: In function '-[FacebookBBrosemer didReceiveMemoryWarning]':
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1319: warning: 'NSObject' may not respond to '-didReceiveMemoryWarning'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m: At top level:
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'facebookClientID' requires method '-facebookClientID' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'facebookClientID' requires the method 'setFacebookClientID:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'redirectUri' requires method '-redirectUri' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'redirectUri' requires the method 'setRedirectUri:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'userImage' requires method '-userImage' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'userImage' requires the method 'setUserImage:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'loggedIn' requires the method 'setLoggedIn:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'globalLogin' requires the method 'setGlobalLogin:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'password' requires method '-password' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: property 'password' requires the method 'setPassword:' to be defined - use @synthesize, @dynamic or provide a method implementation
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: incomplete implementation of class 'FacebookBBrosemer'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1341: warning: method definition for '+userPostPicture:andMessage:andTo:' not found
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1449: warning: incomplete implementation of category 'UIDeprecated'
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1449: warning: method definition for '+userPostPicture:andMessage:' not found
+/Users/brandynbrosemer/Documents/FacebookStaticTest/Classes/FacebookBBrosemer.m:1449: warning: method definition for '+applicationPostLink:andMessage:andTitle:andLink:' not found
