@@ -133,10 +133,10 @@
 	if((((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemImage)!=nil){
 		cell.cellImageView.image = ((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemImage;
 	}
-	if(((FacebookUser *)((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemFrom).facebookUserImage!=nil){
-		cell.cellImageViewUser.image = ((FacebookUser *)((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 
-																		   objectAtIndex:indexPath.row])).facebookItemFrom).facebookUserImage;
-	}
+//	if(((FacebookUser *)((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemFrom).facebookUserImage!=nil){
+//		cell.cellImageViewUser.image = ((FacebookUser *)((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 
+//																		   objectAtIndex:indexPath.row])).facebookItemFrom).facebookUserImage;
+//	}
 	cell.cellLikeCount.text = [NSString stringWithFormat:@"%i",((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 
 																				  objectAtIndex:indexPath.row])).facebookItemLikes];
 	cell.cellCommentCount.text = [NSString stringWithFormat:@"%i",[((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 

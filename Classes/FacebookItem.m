@@ -26,11 +26,13 @@
 #import "FacebookBBrosemer.h"
 #import "UIImage+NSCoder.h"
 #import "SBJSON.h"
+#import "FacebookItemHandler.h"
+#import "ISO8601DateFormatter.h"
 
 @implementation FacebookItem
 @synthesize itemId;
 @synthesize facebookItemLink;
-@synthesize facebookItemFrom;
+@synthesize facebookItemFromID;
 @synthesize facebookItemMessage;
 @synthesize facebookItemImageURL;
 @synthesize facebookItemImage;
@@ -47,6 +49,12 @@
 @synthesize facebookItemComments;
 @synthesize delegate;
 @synthesize queue;
+@synthesize facebookImageItem;
+@synthesize facebookDateItemCreateTime;
+@synthesize facebookItemToID;
+@synthesize facebookDateItemUpdateTime;
+@synthesize facebookItemAttribution;
+@synthesize facebookItemSource;
 
 //=========================================================== 
 // - (id)init
@@ -58,7 +66,7 @@
     if (self) {
         itemId = [[[NSString alloc]initWithString:@""] retain];
 		facebookItemLink = [[[NSString alloc]initWithString:@""] retain];
-        facebookItemFrom = [[[FacebookUser alloc]init] retain];
+        facebookItemFromID = [[[NSString alloc]initWithString:@""] retain];
         facebookItemMessage = [[[NSString alloc]initWithString:@""] retain];
         facebookItemImageURL = [[[NSString alloc]initWithString:@""] retain];
         facebookItemImage = [[UIImage imageNamed:@""] retain];
@@ -77,12 +85,26 @@
     return self;
 }
 
+-(void)setFacebookItemType:(FacebookItemType)type{
+    itemType = type;
+}
+-(FacebookItemType)getFacebookItemType{
+    return itemType;
+}
+-(void)setFacebookItemUpdated:(FacebookItemUpdated)type{
+    updateType = type; 
+}
+-(FacebookItemUpdated)getFacebookItemUpdate{
+    return updateType;
+}
+
+
 -(id)initWithID:(NSString *)ID{
 	self = [super init];
     if (self) {
         itemId = [[NSString alloc]initWithString:ID];
         facebookItemLink = [[[NSString alloc]initWithString:@""] retain];
-		facebookItemFrom = [[[FacebookUser alloc]init] retain];
+		facebookItemFromID = [[[NSString alloc]initWithString:@""] retain];
         facebookItemMessage = [[[NSString alloc]initWithString:@""] retain];
         facebookItemImageURL = [[[NSString alloc]initWithString:@""] retain];
         facebookItemImage = [[UIImage imageNamed:@""] retain];
@@ -112,7 +134,7 @@
 {
     [encoder encodeObject:self.itemId forKey:@"itemId"];
     [encoder encodeObject:self.facebookItemLink forKey:@"facebookItemLink"];
-    [encoder encodeObject:self.facebookItemFrom forKey:@"facebookItemFrom"];
+    [encoder encodeObject:self.facebookItemFromID forKey:@"facebookItemFromID"];
     [encoder encodeObject:self.facebookItemMessage forKey:@"facebookItemMessage"];
     [encoder encodeObject:self.facebookItemImageURL forKey:@"facebookItemImageURL"];
     [encoder encodeObject:self.facebookItemImage forKey:@"facebookItemImage"];
@@ -127,6 +149,7 @@
     [encoder encodeInt:self.facebookItemLikes forKey:@"facebookItemLikes"];
 	[encoder encodeInt:self.initHashValue forKey:@"initHashValue"];
     [encoder encodeObject:self.facebookItemComments forKey:@"facebookItemComments"];
+    [encoder encodeObject:self.facebookImageItem forKey:@"facebookImageItem"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder 
@@ -135,7 +158,7 @@
     if (self) {
         self.itemId = [decoder decodeObjectForKey:@"itemId"];
         self.facebookItemLink = [decoder decodeObjectForKey:@"facebookItemLink"];
-        self.facebookItemFrom = [decoder decodeObjectForKey:@"facebookItemFrom"];
+        self.facebookItemFromID = [decoder decodeObjectForKey:@"facebookItemFromID"];
         self.facebookItemMessage = [decoder decodeObjectForKey:@"facebookItemMessage"];
         self.facebookItemImageURL = [decoder decodeObjectForKey:@"facebookItemImageURL"];
         self.facebookItemImage = [decoder decodeObjectForKey:@"facebookItemImage"];
@@ -150,6 +173,7 @@
         self.facebookItemLikes = [decoder decodeIntForKey:@"facebookItemLikes"];
 		self.initHashValue = [decoder decodeIntForKey:@"initHashValue"];
         self.facebookItemComments = [decoder decodeObjectForKey:@"facebookItemComments"];
+        self.facebookImageItem = [decoder decodeObjectForKey:@"facebookImageItem"];
     }
     return self;
 }
@@ -214,206 +238,63 @@
     }
 }
 
-//=========================================================== 
-// - (NSString *)descriptionForKeyPaths
-//
-//=========================================================== 
-- (NSString *)descriptionForKeyPaths 
-{
-    NSMutableString *desc = [NSMutableString string];
-    NSEnumerator *e = [[self keyPaths] objectEnumerator];
-    NSString *thisKey;
-    [desc appendString:@"\n\n"];
-	
-    while (thisKey = [e nextObject]) {
-        [desc appendFormat: @"%@: %@\n", thisKey, [self valueForKey:thisKey]];
-    }
-	
-    return [NSString stringWithString:desc];
-}
-
--(void)startFetchingBackgroundImages{
-	if(self.facebookItemImage == nil){
-		[self fetchUserImage];
-	}
-}
-
--(void)otherThing{
-	backgroundCount = 0;
-	mainItem = 1;
-	for(int i = 0;i<[self.facebookItemComments count];i++){
-		backgroundCount++;
-		//Call Image User Start Update
-		[((FacebookItem *)[self.facebookItemComments objectAtIndex:i]).facebookItemFrom getBackgroundImage];
-	}
+-(FacebookUser *)getFacebookUser{
+    return [FacebookItemHandler returnFacebookUserFromID:self.facebookItemFromID];
 }
 
 
--(void)checkForComments{
-	if (![self queue]) {
-		[self setQueue:[[[NSOperationQueue alloc] init] autorelease]];
-	}
-	NSString *url_string = [NSString stringWithFormat:@"https://graph.facebook.com/%@?", self.itemId];
-	if ([FacebookBBrosemer getAccessTokenClass] != nil) {
+
+
+
+-(void)createFacebookItem:(NSOperationQueue *)queue andId:(NSString *)facebookId andGather:(BOOL)gather{
+    self.itemId = [NSString stringWithString:facebookId];
+    NSString *url_string = [NSString stringWithFormat:@"https://graph.facebook.com/%@?",self.itemId];
+    if ([FacebookLoginHandler getAccessToken] != nil) {
 		//now that any variables have been appended, let's attach the access token....
-		url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, [FacebookBBrosemer getAccessTokenClass]];
-	}else if([[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"]!=nil){
-		url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, 
-					  [NSString stringWithString:[[NSUserDefaults standardUserDefaults] objectForKey:@"accessToken"]]];
+		url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, [FacebookLoginHandler getAccessToken]];
 	}
-	//if(debugMode)
-	//NSLog(@"URL %@",url_string);
-	
 	url_string = [url_string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url_string]];
-	//NSLog(@"DOING SOMETHING11111");
+    ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url_string]];
 	[request setDelegate:self];
-	[request setDidFinishSelector:@selector(requestWentWell:)];
-	[request setDidFailSelector:@selector(requestWentBad:)];
-	[[self queue] addOperation:request];
+	[request setDidFinishSelector:@selector(itemCreated:)];
+    [request setDidFailSelector:@selector(itemFail:)];
+	[queue addOperation:request];
 }
 
-- (void)requestWentWell:(ASIHTTPRequest *)request{
-	//NSLog(@"RESPONSE STRING");
-	NSString *responseString = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
-	//if(debugMode)
-	//NSLog(@"GRAPH RESPONSE %@",responseString);
+-(void)itemCreated:(ASIHTTPRequest *)request{
+    NSString *responseString = [[[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding] autorelease];
 	SBJSON *parser = [[SBJSON alloc] init];
 	NSDictionary *facebook_response = [parser objectWithString:responseString error:nil];	
-	NSLog(@"DICTIONARY %@",facebook_response);
-	if([facebook_response valueForKey:@"updated_time"]){
-		self.facebookItemUpdatedTime = [NSString stringWithString:[facebook_response valueForKey:@"updated_time"]];
-	}
-	if([facebook_response objectForKey:@"likes"]){
-		self.facebookItemLikes = [[[facebook_response objectForKey:@"likes"] valueForKey:@"count"] integerValue];
-		//NSLog(@"LIKESSNFKLDF %i",self.facebookItemLikes);
-	}else{
-		self.facebookItemLikes = 0;
-	}
-	if([facebook_response valueForKey:@"comments"]){
-		//NSLog(@"DOING SOMETHING");
-		NSArray *tempArray = [NSArray arrayWithArray:[[facebook_response objectForKey:@"comments"] objectForKey:@"data"]];
-		NSMutableArray *otherTemp = [[NSMutableArray alloc] init];
-		for(int i = 0;i<[tempArray count];i++){
-			FacebookItem *newItem = [[FacebookItem alloc] initWithID:[[tempArray objectAtIndex:i] objectForKey:@"id"]];
-			newItem.facebookItemMessage = [[tempArray objectAtIndex:i] objectForKey:@"message"];
-			//NSLog(@"MESSAGE %@",newItem.facebookItemMessage);
-			if([[tempArray objectAtIndex:i] objectForKey:@"likes"]){
-				newItem.facebookItemLikes = [[[tempArray objectAtIndex:i] valueForKey:@"likes"] integerValue];
-				//NSLog(@"LIKES        SSSSSS %i",newItem.facebookItemLikes);
-			}else{
-				newItem.facebookItemLikes = 0;
-			}
-			if([[tempArray objectAtIndex:i] objectForKey:@"from"]){
-				newItem.facebookItemFrom.facebookUserId=[NSString stringWithString:[[[tempArray objectAtIndex:i] objectForKey:@"from"] valueForKey:@"id"]];
-				newItem.facebookItemFrom.facebookUserName=[NSString stringWithString:[[[tempArray objectAtIndex:i] objectForKey:@"from"] valueForKey:@"name"]];
-			}
-			[otherTemp addObject:newItem]; 
-			if(i == 0){
-				[self commentUserImage:0];
-			}
-		}
-		self.facebookItemComments = [NSArray arrayWithArray:otherTemp];
-		[otherTemp release];
-	}
-	[parser release];
-	[FacebookBBrosemer update];
+    NSLog(@"Item Dict %@",facebook_response);
+    [parser release];
 }
 
-- (void)requestWentBad:(ASIHTTPRequest *)request{
-	NSError *error = [request error];
-	//NSLog(@"ERROR %@",error);
+-(void)itemFail:(ASIHTTPRequest *)request{
+    NSLog(@"Item fail");
 }
 
 
--(void)commentUserImage:(int)imageLocation{
-	if(imageLocation >= [self.facebookItemComments count]){
-		return;
-	}
-	if(imageLocation==0){
-		globeUserCommentCounter = 0;
-	}
-	
-	NSString *url_string = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?", 
-							((FacebookUser *)((FacebookItem *)[self.facebookItemComments objectAtIndex:globeUserCommentCounter]
-											  ).facebookItemFrom).facebookUserId];
-	if ([FacebookBBrosemer getAccessTokenClass] != nil) {
-		//now that any variables have been appended, let's attach the access token....
-		url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, [FacebookBBrosemer getAccessTokenClass]];
-	}
-	
-	
-	url_string = [url_string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	//NSLog(@"URL STIRNG %@",url_string);
-	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:[NSURL URLWithString:url_string]];
-	[request setDelegate:self];
-	[request setDidFinishSelector:@selector(requestDoneItem:)];
-	[request setDidFailSelector:@selector(requestWentWrongItem:)];
-	[[self queue] addOperation:request];
+
+- (NSComparisonResult)compare:(FacebookItem *)otherObject{
+   // NSLog(@"COMPARE %@, %@ ",self.itemId,otherObject.itemId);
+    NSNumberFormatter * form = [[[NSNumberFormatter alloc] init] autorelease];
+    [form setNumberStyle:NSNumberFormatterNoStyle];
+    NSNumber *tempNumber = [form numberFromString:[self.itemId stringByReplacingOccurrencesOfString:@"_" withString:@""]];
+    NSNumber *objectNumber = [form numberFromString:[otherObject.itemId stringByReplacingOccurrencesOfString:@"_" withString:@""]];
+    return [tempNumber compare:objectNumber];
+    //return NSOrderedSame;
 }
 
--(void)requestDoneItem:(ASIHTTPRequest *)request{
-	NSLog(@"WORKED !>!O");
-	if(globeUserCommentCounter < [self.facebookItemComments count]){
-		((FacebookUser *)((FacebookItem *)[self.facebookItemComments objectAtIndex:globeUserCommentCounter]
-						  ).facebookItemFrom).facebookUserImage = [[UIImage alloc] initWithData:[request responseData]];
-		NSLog(@"WOvcvxRKED !>!O");
-	}
-	[FacebookBBrosemer update];
-	NSLog(@"WxcvxcvxcvxcvscdsORKED !>!O");
-	
-	globeUserCommentCounter++;
-	[self commentUserImage:globeUserCommentCounter];
-}
-
--(void)requestWentWrongItem{
-	//NSLog(@"Failed !>!O");
-	
-	globeUserCommentCounter++;
-	[self commentUserImage:globeUserCommentCounter];
-}
-
--(void)fetchUserImage{
-	if(((FacebookUser *)self.facebookItemFrom).facebookUserImage == nil){
-		//NSLog(@"CALLED WEEEEEEE");
-		NSString *url_string = [NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?",((FacebookUser *)self.facebookItemFrom).facebookUserId];
-		url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, [FacebookBBrosemer getAccessTokenClass]];
-		url_string = [url_string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-		//NSLog(@"URL STIRNG %@",url_string);
-		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url_string]];
-		NSError *err;
-		NSURLResponse *resp;
-		NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
-		self.facebookItemFrom.facebookUserImage = [UIImage imageWithData:response];
-		if(self.facebookItemImage == nil){
-			[self fetchStoryImage];
-		}
-		
-	}
-}
-
--(void)fetchStoryImage{
-	NSLog(@"CALLED WEEEEEEE");
-	NSString *url_string = [NSString stringWithFormat:[self.facebookItemImageURL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	//url_string = [url_string stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-	//url_string = [NSString stringWithFormat:@"%@access_token=%@", url_string, [FacebookBBrosemer getAccessTokenClass]];
-	NSLog(@"URL STIRNG %@",self.facebookItemImageURL);
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self.facebookItemImageURL stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]]];
-	NSError *err;
-	NSURLResponse *resp;
-	NSData *response = [NSURLConnection sendSynchronousRequest:request returningResponse:&resp error:&err];
-	self.facebookItemImage = [UIImage imageWithData:response];
+- (NSComparisonResult)compareDate:(FacebookItem *)otherObject{
+    ISO8601DateFormatter *formatter = [[[ISO8601DateFormatter alloc] init] autorelease];
+    NSDate *tempNumber = [formatter dateFromString:self.facebookItemUpdatedTime];
+    NSDate *objectNumber = [formatter dateFromString:otherObject.facebookItemUpdatedTime];
+    return [objectNumber compare:tempNumber];
+    //return NSOrderedSame;
 }
 
 
--(void)userItemUpadated{
-	NSLog(@"USER UPDATEDdsfsdf?");
-}
 
-
--(void)userUpadated{
-	NSLog(@"USER UPDATED?");
-}
 
 //=========================================================== 
 // dealloc
@@ -422,7 +303,7 @@
 {
     [itemId release];
     [facebookItemLink release];
-    [facebookItemFrom release];
+    [facebookItemFromID release];
     [facebookItemMessage release];
     [facebookItemImageURL release];
     [facebookItemImage release];
@@ -436,10 +317,9 @@
     [facebookItemUpdatedTime release];
     [facebookItemComments release];
 	[delegate release];
+    [facebookImageItem release];
     [super dealloc];
 }
-
-
 
 
 @end

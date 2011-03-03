@@ -23,11 +23,10 @@
 #import "FacebookStaticTestViewController.h"
 #import "FacebookHashTableNavigationController.h"
 #import "RootViewController.h"
-
-
-
+#import "ImageHandler.h"
 #import "FacebookBBrosemer.h"
-
+#import "FilmImageTableViewController.h"
+#import "FacebookItemHandler.h"
 @implementation FacebookStaticTestViewController
 
 
@@ -61,8 +60,9 @@
 }
 
 -(IBAction)helloWord{
-	[FacebookBBrosemer userPostMessage:@"Hello World" andTitle:@"BBros Facebook Framework" 
-							   andLink:@"http://www.nytimes.com/2010/12/19/us/politics/19cong.html?_r=1&hp" andTo:@"Me"];
+	//[FacebookItemHandler createUser:@"me"];   
+    //[FacebookItemHandler userPostMessage:@"Testing..." andTitle:@"Hello World" andLink:@"bbrosemer.com" andTo:@"me"];
+   // [FacebookItemHandler getFacebookUserMe];
 }
 
 
@@ -71,11 +71,14 @@
 }
 
 -(IBAction)getFriends{
-	[FacebookBBrosemer getUserFriends];
+	[FacebookItemHandler getMeFriends];
 }
 
 -(IBAction)pushChat{
-	[FacebookBBrosemer presentFacebookChatController:YES andCurrentViewController:self];
+	//[FacebookBBrosemer presentFacebookChatController:YES andCurrentViewController:self];
+    [FacebookBBrosemer presentFacebookUserProfileModal:YES andUserId:@"1437950535" andCurrentViewController:self];
+    //[FacebookBBrosemer presentFacebookUserProfileModal:YES andUserId:@"me" andCurrentViewController:self];
+
 }
 
 -(IBAction)displayMessageController{
@@ -83,6 +86,17 @@
 	[FacebookBBrosemer presentFacebookMessageControllerModal:YES withTitle:@"Check this Out" 
 													withLink:@"http://www.nytimes.com/2010/12/19/us/politics/19cong.html?_r=1&hp"
 									andCurrentViewController:self];
+}
+
+-(IBAction)pushGatherImages{
+    filmImage = [[FilmImageTableViewController alloc]init];
+    filmImage.tempHandle = [[ImageHandler alloc] init];
+    [filmImage.tempHandle loadImagesOfMeFromFacebook];
+}
+
+-(IBAction)presentFilmTable{
+    //filmImage.tempHandler = imageHandle;
+    [self presentModalViewController:filmImage animated:YES];
 }
 
 

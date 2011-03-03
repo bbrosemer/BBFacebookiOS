@@ -117,7 +117,7 @@
 		cell.imageView.image =  [FacebookBBrosemer getUserImage];
 	}else{
 	cell.textLabel.text = ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserName;
-    cell.imageView.image =  ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage;
+    //cell.imageView.image =  ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage;
 	}
 		return cell;
 }
@@ -148,9 +148,9 @@
 	}else{
 		labelTo.text = ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserName;
 		NSLog(@"TEST WORK> %@",((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserId);
-		if(((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage != nil){
-			imageViewUserTo.image = ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage; 
-		}
+		//if(((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage != nil){
+		//	imageViewUserTo.image = ((FacebookUser *)[((NSArray *)[FacebookBBrosemer getUserFriends]) objectAtIndex:indexPath.row-1]).facebookUserImage; 
+		//}
 		friendRow = indexPath.row;
 	}
 	uiViewBackTable.frame = CGRectMake(0,0, 320, 460);

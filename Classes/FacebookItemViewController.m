@@ -175,10 +175,11 @@
 		}
     }
     // Set up the cell...
+    /*
 	cell.textViewCommentUserComment.text=((FacebookItem *)[self.facebookItem.facebookItemComments objectAtIndex:indexPath.row]).facebookItemMessage;
 	cell.imageViewFacebookItem.image=((FacebookUser *)((FacebookItem *)[self.facebookItem.facebookItemComments 
 																			objectAtIndex:indexPath.row]).facebookItemFrom).facebookUserImage;
-	
+	*/
     return cell;
 }
 
@@ -218,7 +219,7 @@
 	
 	commentTextView.text = [NSString stringWithFormat:@"What do you have to say?"];
 	commentViewOpen = NO;
-	userPictureView2.image = userPictureView.image = self.facebookItem.facebookItemFrom.facebookUserImage;
+	//userPictureView2.image = userPictureView.image = self.facebookItem.facebookItemFrom.facebookUserImage;
 	articleImageView.image = self.facebookItem.facebookItemImage;
 	articleTitleView.text = self.facebookItem.facebookItemName;
 	articleTextView.text = self.facebookItem.facebookItemDescription;

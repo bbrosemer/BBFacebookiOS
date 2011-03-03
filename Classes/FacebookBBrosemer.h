@@ -22,8 +22,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import"FacebookGraphData.h"
-#import"FacebookGraphDataResponse.h"
+
 #import"SBJSON.h"
 #import"FacebookItem.h"
 #import"FacebookWallPostController.h"
@@ -32,6 +31,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "MutableChatDictionary.h"
+#import "iPadFacebookProfileController.h"
 @class XMPPStream;
 @class XMPPRoster;
 @class XMPPRosterCoreDataStorage;
@@ -54,14 +54,8 @@ static BOOL debugMode;
 @interface FacebookBBrosemer : NSObject <UIWebViewDelegate> {
 	NSMutableArray *facebookPostsArray,*newestFirstArray;
 	FacebookFriends *friendsList;
-	BOOL loggedIn;
-	BOOL showLoad;
-	BOOL globalLogin;
 	UIAlertView *baseAlert2;
-	NSString *facebookClientID;
-	NSString *redirectUri;
 	NSString *accessToken;
-	NSString *permissions;
 	UIWebView *webView;
 	UIProgressView *progressView;
 	UINavigationController *navController;
@@ -71,8 +65,6 @@ static BOOL debugMode;
 	RootViewController *rootViewController;
 	iPadTableViewController *iPadView;
 	FacebookUser *meUser;
-	id callbackObject;
-	SEL callbackSelector;
 	id delegate;
 	
 	
@@ -94,9 +86,9 @@ static BOOL debugMode;
 	MutableChatDictionary *chats;
 }
 @property (nonatomic, retain) NSMutableArray *facebookPostsArray,*newestFirstArray;
-@property (nonatomic, retain) NSString *facebookClientID;
-@property (nonatomic, retain) NSString *redirectUri;
-@property (nonatomic, retain) NSString *permissions;
+//@property (nonatomic, retain) NSString *facebookClientID;
+//@property (nonatomic, retain) NSString *redirectUri;
+//@property (nonatomic, retain) NSString *permissions;
 @property (nonatomic, retain) FacebookFriends *friendList;
 @property (nonatomic, retain) UIImage *userImage;
 @property (nonatomic, retain) NSString *accessToken;
@@ -106,8 +98,8 @@ static BOOL debugMode;
 @property (nonatomic, retain) iPadTableViewController *iPadView;
 @property (nonatomic, retain) RootViewController *rootViewController;
 @property (nonatomic, retain) FacebookUser *meUser;
-@property (nonatomic, assign, getter=is_isLoggedIn) BOOL loggedIn;
-@property (nonatomic, assign, getter=is_isGlobalLogin) BOOL globalLogin;
+//@property (nonatomic, assign, getter=is_isLoggedIn) BOOL loggedIn;
+//@property (nonatomic, assign, getter=is_isGlobalLogin) BOOL globalLogin;
 @property (nonatomic, assign) id <FacebookDelegate> delegate;
 @property (nonatomic, assign) UIProgressView *progressView;
 @property (nonatomic, assign) UIAlertView *progressAlert;
@@ -201,6 +193,8 @@ static BOOL debugMode;
 +(void)presentFacebookMessageControllerModal:(BOOL)animated withTitle:(NSString *)title withLink:(NSString *)linkURL
 					andCurrentViewController:(UIViewController *)viewController;
 ///////////////////////////////////////////
++(void)presentFacebookUserProfileModal:(BOOL)animated andUserId:(NSString *)userId andCurrentViewController:(UIViewController *)viewController;
+
 
 //////////////////////////////////////////
 //Displyay Various NSLogMessages

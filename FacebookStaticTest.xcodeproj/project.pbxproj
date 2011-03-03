@@ -52,6 +52,12 @@
 		F826C9B112FC9D1D00D2A6CE /* FacebookWallPostController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F826C9A912FC9D1D00D2A6CE /* FacebookWallPostController.xib */; };
 		F826C9B212FC9D1D00D2A6CE /* FacebookItemViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F826C9AA12FC9D1D00D2A6CE /* FacebookItemViewController~ipad.xib */; };
 		F826C9B312FC9D1D00D2A6CE /* FacebookWallPostController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F826C9AB12FC9D1D00D2A6CE /* FacebookWallPostController~ipad.xib */; };
+		F829079B13087DD7006E9472 /* FilmImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F829079413087DD7006E9472 /* FilmImageCell.m */; };
+		F829079C13087DD7006E9472 /* FilmImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F829079513087DD7006E9472 /* FilmImageCell.xib */; };
+		F829079D13087DD7006E9472 /* FilmImageTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F829079713087DD7006E9472 /* FilmImageTableViewController.m */; };
+		F829079E13087DD7006E9472 /* FilmImageTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F829079813087DD7006E9472 /* FilmImageTableViewController.xib */; };
+		F829079F13087DD7006E9472 /* FilmRowScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F829079A13087DD7006E9472 /* FilmRowScrollView.m */; };
+		F829B19D130C866700A05280 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F829B19C130C866700A05280 /* ISO8601DateFormatter.m */; };
 		F84AF50E12F8CA4500AE18C3 /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = F84AF50D12F8CA4500AE18C3 /* UIColor-Expanded.m */; };
 		F84AF51212F8CA5900AE18C3 /* ChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84AF51012F8CA5900AE18C3 /* ChatController.m */; };
 		F84AF51312F8CA5900AE18C3 /* ChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F84AF51112F8CA5900AE18C3 /* ChatController.xib */; };
@@ -87,7 +93,10 @@
 		F84AF5A412F8CEDF00AE18C3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F84AF5A312F8CEDF00AE18C3 /* RootViewController.m */; };
 		F84AF5E912F91B2800AE18C3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F84AF5E812F91B2800AE18C3 /* CoreData.framework */; };
 		F84AF5F112F91B6100AE18C3 /* libresolv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F84AF5F012F91B6100AE18C3 /* libresolv.dylib */; };
+		F85CB024131489CF00752DE0 /* iPhoneFacebookProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = F85CB022131489CF00752DE0 /* iPhoneFacebookProfileController.m */; };
+		F85CB025131489CF00752DE0 /* iPhoneFacebookProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F85CB023131489CF00752DE0 /* iPhoneFacebookProfileController.xib */; };
 		F861D0E012DE2951002E6693 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = F861D0DF12DE2951002E6693 /* libxml2.dylib */; };
+		F8A4B80D1315E52400AE5C66 /* FacebookItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8A4B80C1315E52400AE5C66 /* FacebookItemTableViewCell.xib */; };
 		F8B3731E12B9E82500A4574B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3731D12B9E82500A4574B /* SystemConfiguration.framework */; };
 		F8B3754D12BA252800A4574B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3754C12BA252800A4574B /* CFNetwork.framework */; };
 		F8B3754F12BA253200A4574B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8B3754E12BA253200A4574B /* MobileCoreServices.framework */; };
@@ -126,16 +135,24 @@
 		F8B538E612EA95B9006E5955 /* FacebookItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538CB12EA95B9006E5955 /* FacebookItemViewController.m */; };
 		F8B538E712EA95B9006E5955 /* FacebookLike.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538CD12EA95B9006E5955 /* FacebookLike.m */; };
 		F8B538EB12EA95B9006E5955 /* FacebookTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538D612EA95B9006E5955 /* FacebookTableViewCell.m */; };
-		F8B538EC12EA95B9006E5955 /* FacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538D812EA95B9006E5955 /* FacebookUser.m */; };
 		F8B538ED12EA95B9006E5955 /* FacebookWallPostController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538DA12EA95B9006E5955 /* FacebookWallPostController.m */; };
 		F8B538EE12EA95B9006E5955 /* iPadTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538DC12EA95B9006E5955 /* iPadTableViewController.m */; };
 		F8B538F612EA95CA006E5955 /* UIImage+NSCoder.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B538F512EA95CA006E5955 /* UIImage+NSCoder.m */; };
 		F8B539AF12EAA0D5006E5955 /* blacktriangleR.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B539AD12EAA0D5006E5955 /* blacktriangleR.png */; };
 		F8B539B012EAA0D5006E5955 /* blacktriangleR@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8B539AE12EAA0D5006E5955 /* blacktriangleR@2x.png */; };
+		F8B71C65130C368900F0BDE8 /* FacebookLoginHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8B71C64130C367F00F0BDE8 /* FacebookLoginHandler.m */; };
 		F8B8EA0D12F29F6500350075 /* BuddyList.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8B8EA0C12F29F6500350075 /* BuddyList.xib */; };
+		F8BC90F413148991001D8EC8 /* iPadFacebookProfileController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8BC90F313148991001D8EC8 /* iPadFacebookProfileController.xib */; };
+		F8D4BDDF130F75CB00777713 /* FacebookItemHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8D4BDDE130F75CB00777713 /* FacebookItemHandler.m */; };
 		F8DF3EEF1307024A006D4C1D /* ImageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3EEE1307024A006D4C1D /* ImageHandler.m */; };
 		F8DF3EF413070261006D4C1D /* ImageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = F8DF3EF313070261006D4C1D /* ImageItem.m */; };
+		F8E47E1213086F9200F55AE8 /* film@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E47E1013086F9200F55AE8 /* film@2x.png */; };
+		F8E47E1313086F9200F55AE8 /* film.png in Resources */ = {isa = PBXBuildFile; fileRef = F8E47E1113086F9200F55AE8 /* film.png */; };
 		F8EDE69212E755DF0055EC4E /* FacebookItemViewController~ipad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F8EDE69112E755DF0055EC4E /* FacebookItemViewController~ipad.xib */; };
+		F8F0702913136D8B004B8016 /* NSArray+CWSortedInsert.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F0702813136D8A004B8016 /* NSArray+CWSortedInsert.m */; };
+		F8F7B13013103AD0000A0A6B /* FacebookUser.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F7B12F13103AD0000A0A6B /* FacebookUser.m */; };
+		F8F7B13313103BEC000A0A6B /* FacebookMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F7B13213103BEC000A0A6B /* FacebookMutableArray.m */; };
+		F8F7B1371310B81A000A0A6B /* iPadFacebookProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8F7B1351310B811000A0A6B /* iPadFacebookProfileController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -186,6 +203,16 @@
 		F826C9A912FC9D1D00D2A6CE /* FacebookWallPostController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FacebookWallPostController.xib; sourceTree = "<group>"; };
 		F826C9AA12FC9D1D00D2A6CE /* FacebookItemViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FacebookItemViewController~ipad.xib"; sourceTree = "<group>"; };
 		F826C9AB12FC9D1D00D2A6CE /* FacebookWallPostController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FacebookWallPostController~ipad.xib"; sourceTree = "<group>"; };
+		F829079313087DD7006E9472 /* FilmImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmImageCell.h; sourceTree = SOURCE_ROOT; };
+		F829079413087DD7006E9472 /* FilmImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmImageCell.m; sourceTree = SOURCE_ROOT; };
+		F829079513087DD7006E9472 /* FilmImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilmImageCell.xib; sourceTree = SOURCE_ROOT; };
+		F829079613087DD7006E9472 /* FilmImageTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmImageTableViewController.h; sourceTree = SOURCE_ROOT; };
+		F829079713087DD7006E9472 /* FilmImageTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmImageTableViewController.m; sourceTree = SOURCE_ROOT; };
+		F829079813087DD7006E9472 /* FilmImageTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilmImageTableViewController.xib; sourceTree = SOURCE_ROOT; };
+		F829079913087DD7006E9472 /* FilmRowScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilmRowScrollView.h; sourceTree = SOURCE_ROOT; };
+		F829079A13087DD7006E9472 /* FilmRowScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilmRowScrollView.m; sourceTree = SOURCE_ROOT; };
+		F829B19B130C866700A05280 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ISO8601DateFormatter.h; path = ../ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		F829B19C130C866700A05280 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ISO8601DateFormatter.m; path = ../ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		F84AF50C12F8CA4500AE18C3 /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
 		F84AF50D12F8CA4500AE18C3 /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
 		F84AF50F12F8CA5900AE18C3 /* ChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatController.h; sourceTree = "<group>"; };
@@ -259,7 +286,11 @@
 		F84AF5A312F8CEDF00AE18C3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F84AF5E812F91B2800AE18C3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		F84AF5F012F91B6100AE18C3 /* libresolv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libresolv.dylib; path = usr/lib/libresolv.dylib; sourceTree = SDKROOT; };
+		F85CB021131489CF00752DE0 /* iPhoneFacebookProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPhoneFacebookProfileController.h; sourceTree = "<group>"; };
+		F85CB022131489CF00752DE0 /* iPhoneFacebookProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPhoneFacebookProfileController.m; sourceTree = "<group>"; };
+		F85CB023131489CF00752DE0 /* iPhoneFacebookProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPhoneFacebookProfileController.xib; sourceTree = "<group>"; };
 		F861D0DF12DE2951002E6693 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		F8A4B80C1315E52400AE5C66 /* FacebookItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookItemTableViewCell.xib; sourceTree = "<group>"; };
 		F8B3731D12B9E82500A4574B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F8B3754C12BA252800A4574B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		F8B3754E12BA253200A4574B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -333,8 +364,6 @@
 		F8B538CD12EA95B9006E5955 /* FacebookLike.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLike.m; sourceTree = "<group>"; };
 		F8B538D512EA95B9006E5955 /* FacebookTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookTableViewCell.h; sourceTree = "<group>"; };
 		F8B538D612EA95B9006E5955 /* FacebookTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookTableViewCell.m; sourceTree = "<group>"; };
-		F8B538D712EA95B9006E5955 /* FacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUser.h; sourceTree = "<group>"; };
-		F8B538D812EA95B9006E5955 /* FacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUser.m; sourceTree = "<group>"; };
 		F8B538D912EA95B9006E5955 /* FacebookWallPostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookWallPostController.h; sourceTree = "<group>"; };
 		F8B538DA12EA95B9006E5955 /* FacebookWallPostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookWallPostController.m; sourceTree = "<group>"; };
 		F8B538DB12EA95B9006E5955 /* iPadTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadTableViewController.h; sourceTree = "<group>"; };
@@ -343,12 +372,27 @@
 		F8B538F512EA95CA006E5955 /* UIImage+NSCoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+NSCoder.m"; sourceTree = "<group>"; };
 		F8B539AD12EAA0D5006E5955 /* blacktriangleR.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blacktriangleR.png; sourceTree = "<group>"; };
 		F8B539AE12EAA0D5006E5955 /* blacktriangleR@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blacktriangleR@2x.png"; sourceTree = "<group>"; };
+		F8B71C63130C367A00F0BDE8 /* FacebookLoginHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookLoginHandler.h; sourceTree = "<group>"; };
+		F8B71C64130C367F00F0BDE8 /* FacebookLoginHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookLoginHandler.m; sourceTree = "<group>"; };
 		F8B8EA0C12F29F6500350075 /* BuddyList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BuddyList.xib; sourceTree = "<group>"; };
+		F8BC90F313148991001D8EC8 /* iPadFacebookProfileController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iPadFacebookProfileController.xib; sourceTree = "<group>"; };
+		F8D4BDDD130F75CB00777713 /* FacebookItemHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FacebookItemHandler.h; path = ../FacebookItemHandler.h; sourceTree = "<group>"; };
+		F8D4BDDE130F75CB00777713 /* FacebookItemHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FacebookItemHandler.m; path = ../FacebookItemHandler.m; sourceTree = "<group>"; };
 		F8DF3EED1307024A006D4C1D /* ImageHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageHandler.h; sourceTree = "<group>"; };
 		F8DF3EEE1307024A006D4C1D /* ImageHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageHandler.m; sourceTree = "<group>"; };
 		F8DF3EF213070261006D4C1D /* ImageItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageItem.h; sourceTree = "<group>"; };
 		F8DF3EF313070261006D4C1D /* ImageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageItem.m; sourceTree = "<group>"; };
+		F8E47E1013086F9200F55AE8 /* film@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "film@2x.png"; sourceTree = "<group>"; };
+		F8E47E1113086F9200F55AE8 /* film.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = film.png; sourceTree = "<group>"; };
 		F8EDE69112E755DF0055EC4E /* FacebookItemViewController~ipad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = "FacebookItemViewController~ipad.xib"; sourceTree = "<group>"; };
+		F8F0702713136D89004B8016 /* NSArray+CWSortedInsert.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+CWSortedInsert.h"; sourceTree = "<group>"; };
+		F8F0702813136D8A004B8016 /* NSArray+CWSortedInsert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+CWSortedInsert.m"; sourceTree = "<group>"; };
+		F8F7B12E13103AD0000A0A6B /* FacebookUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookUser.h; sourceTree = SOURCE_ROOT; };
+		F8F7B12F13103AD0000A0A6B /* FacebookUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookUser.m; sourceTree = SOURCE_ROOT; };
+		F8F7B13113103BEC000A0A6B /* FacebookMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookMutableArray.h; sourceTree = "<group>"; };
+		F8F7B13213103BEC000A0A6B /* FacebookMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookMutableArray.m; sourceTree = "<group>"; };
+		F8F7B1341310B80F000A0A6B /* iPadFacebookProfileController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iPadFacebookProfileController.h; sourceTree = "<group>"; };
+		F8F7B1351310B811000A0A6B /* iPadFacebookProfileController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iPadFacebookProfileController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -384,6 +428,13 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				F8F7B1341310B80F000A0A6B /* iPadFacebookProfileController.h */,
+				F8A4B80C1315E52400AE5C66 /* FacebookItemTableViewCell.xib */,
+				F8F7B1351310B811000A0A6B /* iPadFacebookProfileController.m */,
+				F8BC90F313148991001D8EC8 /* iPadFacebookProfileController.xib */,
+				F85CB021131489CF00752DE0 /* iPhoneFacebookProfileController.h */,
+				F85CB022131489CF00752DE0 /* iPhoneFacebookProfileController.m */,
+				F85CB023131489CF00752DE0 /* iPhoneFacebookProfileController.xib */,
 				F8B8E6D112F26CA400350075 /* FacebookChat */,
 				F8B5388812EA952F006E5955 /* JSON */,
 				F8B5388112EA94EB006E5955 /* Classes */,
@@ -701,8 +752,8 @@
 		F8B5388112EA94EB006E5955 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				F8DF3EF113070251006D4C1D /* ImageClasses */,
 				F84AF58F12F8CE0400AE18C3 /* FacebookChat.h */,
-				F8DF3EF113070251006D4C1D /* New Group */,
 				F84AF59012F8CE0400AE18C3 /* FacebookChat.m */,
 				F84AF58612F8CDF600AE18C3 /* MutableChatDictionary.h */,
 				F84AF58712F8CDF600AE18C3 /* MutableChatDictionary.m */,
@@ -710,6 +761,16 @@
 				F8B538B912EA95B9006E5955 /* FacebookActions.m */,
 				F8B538BA12EA95B9006E5955 /* FacebookBBrosemer.h */,
 				F8B538BB12EA95B9006E5955 /* FacebookBBrosemer.m */,
+				F8B71C63130C367A00F0BDE8 /* FacebookLoginHandler.h */,
+				F8B71C64130C367F00F0BDE8 /* FacebookLoginHandler.m */,
+				F8D4BDDD130F75CB00777713 /* FacebookItemHandler.h */,
+				F8D4BDDE130F75CB00777713 /* FacebookItemHandler.m */,
+				F8F7B12E13103AD0000A0A6B /* FacebookUser.h */,
+				F8F7B12F13103AD0000A0A6B /* FacebookUser.m */,
+				F8F0702713136D89004B8016 /* NSArray+CWSortedInsert.h */,
+				F8F0702813136D8A004B8016 /* NSArray+CWSortedInsert.m */,
+				F8F7B13113103BEC000A0A6B /* FacebookMutableArray.h */,
+				F8F7B13213103BEC000A0A6B /* FacebookMutableArray.m */,
 				F8B538BC12EA95B9006E5955 /* FacebookComment.h */,
 				F8B538BD12EA95B9006E5955 /* FacebookComment.m */,
 				F8B538BE12EA95B9006E5955 /* FacebookFriends.h */,
@@ -720,6 +781,8 @@
 				F8B538C312EA95B9006E5955 /* FacebookGraphDataResponse.m */,
 				F8B538C412EA95B9006E5955 /* FacebookHashTableNavigationController.h */,
 				F8B538C512EA95B9006E5955 /* FacebookHashTableNavigationController.m */,
+				F829B19B130C866700A05280 /* ISO8601DateFormatter.h */,
+				F829B19C130C866700A05280 /* ISO8601DateFormatter.m */,
 				F8B538C612EA95B9006E5955 /* FacebookItem.h */,
 				F8B538C712EA95B9006E5955 /* FacebookItem.m */,
 				F8B538C812EA95B9006E5955 /* FacebookItemTableViewCell.h */,
@@ -730,8 +793,6 @@
 				F8B538CD12EA95B9006E5955 /* FacebookLike.m */,
 				F8B538D512EA95B9006E5955 /* FacebookTableViewCell.h */,
 				F8B538D612EA95B9006E5955 /* FacebookTableViewCell.m */,
-				F8B538D712EA95B9006E5955 /* FacebookUser.h */,
-				F8B538D812EA95B9006E5955 /* FacebookUser.m */,
 				F8B538D912EA95B9006E5955 /* FacebookWallPostController.h */,
 				F8B538DA12EA95B9006E5955 /* FacebookWallPostController.m */,
 				F8B538DB12EA95B9006E5955 /* iPadTableViewController.h */,
@@ -772,15 +833,25 @@
 			name = FacebookChat;
 			sourceTree = "<group>";
 		};
-		F8DF3EF113070251006D4C1D /* New Group */ = {
+		F8DF3EF113070251006D4C1D /* ImageClasses */ = {
 			isa = PBXGroup;
 			children = (
+				F829079313087DD7006E9472 /* FilmImageCell.h */,
+				F829079413087DD7006E9472 /* FilmImageCell.m */,
+				F829079513087DD7006E9472 /* FilmImageCell.xib */,
+				F829079613087DD7006E9472 /* FilmImageTableViewController.h */,
+				F829079713087DD7006E9472 /* FilmImageTableViewController.m */,
+				F829079813087DD7006E9472 /* FilmImageTableViewController.xib */,
+				F829079913087DD7006E9472 /* FilmRowScrollView.h */,
+				F829079A13087DD7006E9472 /* FilmRowScrollView.m */,
+				F8E47E1113086F9200F55AE8 /* film.png */,
+				F8E47E1013086F9200F55AE8 /* film@2x.png */,
 				F8DF3EED1307024A006D4C1D /* ImageHandler.h */,
 				F8DF3EEE1307024A006D4C1D /* ImageHandler.m */,
 				F8DF3EF213070261006D4C1D /* ImageItem.h */,
 				F8DF3EF313070261006D4C1D /* ImageItem.m */,
 			);
-			name = "New Group";
+			name = ImageClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -884,6 +955,13 @@
 				F826C9B112FC9D1D00D2A6CE /* FacebookWallPostController.xib in Resources */,
 				F826C9B212FC9D1D00D2A6CE /* FacebookItemViewController~ipad.xib in Resources */,
 				F826C9B312FC9D1D00D2A6CE /* FacebookWallPostController~ipad.xib in Resources */,
+				F8E47E1213086F9200F55AE8 /* film@2x.png in Resources */,
+				F8E47E1313086F9200F55AE8 /* film.png in Resources */,
+				F829079C13087DD7006E9472 /* FilmImageCell.xib in Resources */,
+				F829079E13087DD7006E9472 /* FilmImageTableViewController.xib in Resources */,
+				F8BC90F413148991001D8EC8 /* iPadFacebookProfileController.xib in Resources */,
+				F85CB025131489CF00752DE0 /* iPhoneFacebookProfileController.xib in Resources */,
+				F8A4B80D1315E52400AE5C66 /* FacebookItemTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -924,7 +1002,6 @@
 				F8B538E612EA95B9006E5955 /* FacebookItemViewController.m in Sources */,
 				F8B538E712EA95B9006E5955 /* FacebookLike.m in Sources */,
 				F8B538EB12EA95B9006E5955 /* FacebookTableViewCell.m in Sources */,
-				F8B538EC12EA95B9006E5955 /* FacebookUser.m in Sources */,
 				F8B538ED12EA95B9006E5955 /* FacebookWallPostController.m in Sources */,
 				F8B538EE12EA95B9006E5955 /* iPadTableViewController.m in Sources */,
 				F8B538F612EA95CA006E5955 /* UIImage+NSCoder.m in Sources */,
@@ -960,6 +1037,17 @@
 				F84AF5A412F8CEDF00AE18C3 /* RootViewController.m in Sources */,
 				F8DF3EEF1307024A006D4C1D /* ImageHandler.m in Sources */,
 				F8DF3EF413070261006D4C1D /* ImageItem.m in Sources */,
+				F829079B13087DD7006E9472 /* FilmImageCell.m in Sources */,
+				F829079D13087DD7006E9472 /* FilmImageTableViewController.m in Sources */,
+				F829079F13087DD7006E9472 /* FilmRowScrollView.m in Sources */,
+				F8B71C65130C368900F0BDE8 /* FacebookLoginHandler.m in Sources */,
+				F829B19D130C866700A05280 /* ISO8601DateFormatter.m in Sources */,
+				F8D4BDDF130F75CB00777713 /* FacebookItemHandler.m in Sources */,
+				F8F7B13013103AD0000A0A6B /* FacebookUser.m in Sources */,
+				F8F7B13313103BEC000A0A6B /* FacebookMutableArray.m in Sources */,
+				F8F7B1371310B81A000A0A6B /* iPadFacebookProfileController.m in Sources */,
+				F8F0702913136D8B004B8016 /* NSArray+CWSortedInsert.m in Sources */,
+				F85CB024131489CF00752DE0 /* iPhoneFacebookProfileController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

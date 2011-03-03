@@ -25,6 +25,8 @@
 
 @interface FacebookComment : NSObject {
 	FacebookItem *commentItem;
+    
+    //Should probably destror the entire facebook comment object-->
 }
 
 @property (nonatomic, retain) FacebookItem *commentItem;

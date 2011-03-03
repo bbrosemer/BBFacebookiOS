@@ -107,7 +107,7 @@
 			}
 		}
     }
-	
+	/*
     // Set up the cell...
 	cell.cellTitle.text=((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemName;
 	cell.cellDescription.text=((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] objectAtIndex:indexPath.row])).facebookItemDescription;
@@ -121,7 +121,8 @@
 	cell.cellLikeCount.text = [NSString stringWithFormat:@"%i",((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 
 																		   objectAtIndex:indexPath.row])).facebookItemLikes];
 	cell.cellCommentCount.text = [NSString stringWithFormat:@"%i",[((FacebookItem *)([(NSMutableArray *)[FacebookBBrosemer getNewestFirstArray] 
-																				  objectAtIndex:indexPath.row])).facebookItemComments count]];
+																			  objectAtIndex:indexPath.row])).facebookItemComments count]];
+     */
     return cell;
 }
 

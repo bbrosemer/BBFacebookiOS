@@ -21,9 +21,13 @@
  */
 
 #import <UIKit/UIKit.h>
+#import "ImageHandler.h"
+#import "FilmImageTableViewController.h"
 
 @interface FacebookStaticTestViewController : UIViewController {
 	UINavigationController *navContoller;
+    FilmImageTableViewController *filmImage;
+    ImageHandler *imageHandle;
 }
 
 -(IBAction)loginPushed;
@@ -32,6 +36,8 @@
 -(IBAction)presentHashTableNavController;
 -(IBAction)displayMessageController;
 -(IBAction)pushChat;
+-(IBAction)pushGatherImages;
+-(IBAction)presentFilmTable;
 
 @end
 

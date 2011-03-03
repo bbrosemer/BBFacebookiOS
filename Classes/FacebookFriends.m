@@ -91,15 +91,7 @@
 	[[self queue] addOperation:request];
 }
 
--(void)requestDoneItem:(ASIHTTPRequest *)request{
-	((FacebookUser *)[self.facebookFriendArray objectAtIndex:globeImageCounter]).facebookUserImage = [[UIImage alloc] initWithData:[request responseData]];
-	[FacebookBBrosemer friendsUpdated];
-	globeImageCounter++;
-	if(globeImageCounter == [self.facebookFriendArray count]){
-		return;
-	}
-	[self commentUserImage:globeImageCounter];
-}
+
 
 -(void)requestWentWrongItem{
 	globeImageCounter++;
